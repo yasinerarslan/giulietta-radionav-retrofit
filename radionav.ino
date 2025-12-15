@@ -2,7 +2,7 @@
 
 #define POT_PIN A0
 
-#define VOLTAGE_TRIGGER 13
+#define VOLTAGE_TRIGGER 2
 
 #define BTN_OPEN 3
 #define BTN_ANG_UP 4
@@ -18,7 +18,7 @@ int ON_SCR = 1;
 int CLOSE_SCR = -1;
 int PRESSED_BTN = 0;
 int SENSETIVE = 20;
-int CHANGE_ANGLE = 30;
+int CHANGE_ANGLE = 50;
 int CLOSE_POT_POS = 850;
 int MIDDLE_POT_POS = 400;
 int OPEN_POT_POS = 60;
@@ -109,11 +109,11 @@ void moveToMotor(int direction) {
   if(direction == ON_SCR) {
     digitalWrite(DRV_AIN1, HIGH);
     digitalWrite(DRV_AIN2, LOW);
-    analogWrite(DRV_PWMA, 50);
+    analogWrite(DRV_PWMA, 65);
   } else if(direction == CLOSE_SCR) {
     digitalWrite(DRV_AIN1, LOW);
     digitalWrite(DRV_AIN2, HIGH);
-    analogWrite(DRV_PWMA, 60);
+    analogWrite(DRV_PWMA, 75);
   } else {
     digitalWrite(DRV_AIN1, LOW);
     digitalWrite(DRV_AIN2, LOW);
